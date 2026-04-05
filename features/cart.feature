@@ -11,14 +11,14 @@ Feature: Shopping Cart
     When the user adds product number 1 to the cart
     And the user goes to the cart
     Then the cart page should be displayed
-    And the cart should contain 1 item(s)
+    And the cart should contain 1 items
 
   @regression @cart
   Scenario: User can add multiple items and view them in cart
     When the user adds product number 1 to the cart
     And the user adds product number 2 to the cart
     And the user goes to the cart
-    Then the cart should contain 2 item(s)
+    Then the cart should contain 2 items
 
   @regression @cart
   Scenario: User can remove an item from the cart

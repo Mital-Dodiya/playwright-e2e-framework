@@ -5,7 +5,7 @@ Then('the cart page should be displayed', async ({ cartPage }) => {
   await cartPage.verifyCartPageLoaded();
 });
 
-Then('the cart should contain {int} item(s)', async ({ cartPage }, count: number) => {
+Then('the cart should contain {int} items', async ({ cartPage }, count: number) => {
   const actual = await cartPage.getCartItemCount();
   expect(actual).toBe(count);
 });

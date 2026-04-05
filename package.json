@@ -1,0 +1,20 @@
+{
+  "name": "playwright-e2e-framework",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript E2E Automation Framework using BDD, Cucumber and Page Object Model",
+  "scripts": {
+    "bdd:gen": "bddgen",
+    "test": "npm run bdd:gen && playwright test",
+    "test:smoke": "npm run bdd:gen && playwright test --grep @smoke",
+    "test:regression": "npm run bdd:gen && playwright test --grep @regression",
+    "test:headed": "npm run bdd:gen && playwright test --headed",
+    "report": "playwright show-report",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.0",
+    "playwright-bdd": "^7.0.0",
+    "typescript": "^5.4.5"
+  }
+}

@@ -23,6 +23,19 @@ Feature: Products Page
     Then the cart badge should show "2"
 
   @regression @products
+  Scenario Outline: User can sort products by different options
+    Given the user is logged in as "standard_user"
+    When the user sorts products by "<sortOption>"
+    Then the products page should be displayed
+
+    Examples:
+      | sortOption |
+      | az         |
+      | za         |
+      | lohi       |
+      | hilo       |
+
+  @regression @products
   Scenario: User can logout successfully
     Given the user is logged in as "standard_user"
     When the user logs out

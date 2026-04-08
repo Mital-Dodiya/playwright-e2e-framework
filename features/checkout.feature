@@ -42,3 +42,17 @@ Feature: Checkout
     When the user fills in checkout info with first name "Mital" last name "Dodiya" and postal code ""
     And the user clicks continue
     Then the checkout error message "Postal Code is required" should be displayed
+
+  @regression @checkout
+  Scenario Outline: Checkout fails with invalid postal code formats
+    Then the checkout page should be displayed
+    When the user fills in checkout info with first name "Mital" last name "Dodiya" and postal code "<postalCode>"
+    And the user clicks continue
+    Then the checkout overview page should be displayed
+
+    Examples:
+      | postalCode |
+      | ABC123     |
+      | @@@@@@     |
+      | 00000      |
+      | 999999     |

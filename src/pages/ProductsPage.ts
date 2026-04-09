@@ -55,6 +55,15 @@ export class ProductsPage extends BasePage {
     await this.cartIcon.click();
   }
 
+  async getProductPriceByIndex(index: number): Promise<string> {
+    return (
+      (await this.productItems
+        .nth(index)
+        .locator('.inventory_item_price')
+        .textContent()) ?? ''
+    );
+  }
+
   async logout(): Promise<void> {
     await this.burgerMenu.click();
     await this.logoutLink.click();

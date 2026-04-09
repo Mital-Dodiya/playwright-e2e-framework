@@ -36,6 +36,20 @@ Feature: Products Page
       | hilo       |
 
   @regression @products
+  Scenario Outline: Product prices are displayed correctly
+    Given the user is logged in as "standard_user"
+    Then the product at index <index> should have price "<price>"
+
+    Examples:
+      | index | price   |
+      | 1     | $29.99  |
+      | 2     | $9.99   |
+      | 3     | $15.99  |
+      | 4     | $49.99  |
+      | 5     | $7.99   |
+      | 6     | $15.99  |
+
+  @regression @products
   Scenario: User can logout successfully
     Given the user is logged in as "standard_user"
     When the user logs out

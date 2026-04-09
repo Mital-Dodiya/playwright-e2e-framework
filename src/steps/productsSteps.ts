@@ -37,6 +37,14 @@ When('the user logs out', async ({ productsPage }) => {
   await productsPage.logout();
 });
 
+Then(
+  'the product at index {int} should have price {string}',
+  async ({ productsPage }, index: number, price: string) => {
+    const actual = await productsPage.getProductPriceByIndex(index - 1);
+    expect(actual).toBe(price);
+  }
+);
+
 Then('the user should be on the login page', async ({ page }) => {
   await expect(page).toHaveURL(/saucedemo\.com\/?$/);
 });

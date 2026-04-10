@@ -28,6 +28,7 @@ export class LoginPage extends BasePage {
   }
 
   async verifyLoginPageLoaded(): Promise<void> {
+    await this.verifyPageTitle('Swag Labs');
     await expect(this.loginLogo).toBeVisible();
     await expect(this.usernameInput).toBeVisible();
     await expect(this.passwordInput).toBeVisible();

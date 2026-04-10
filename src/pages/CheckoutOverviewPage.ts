@@ -22,7 +22,8 @@ export class CheckoutOverviewPage extends BasePage {
   }
 
   async verifyOverviewPageLoaded(): Promise<void> {
-    await expect(this.pageTitle).toHaveText('Checkout: Overview');
+    await this.verifyPageTitle('Swag Labs');
+    await this.verifyPageHeading(this.pageTitle, 'Checkout: Overview');
     await expect(this.finishButton).toBeVisible();
   }
 

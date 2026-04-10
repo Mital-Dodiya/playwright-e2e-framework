@@ -22,7 +22,8 @@ export class ProductsPage extends BasePage {
   }
 
   async verifyProductsPageLoaded(): Promise<void> {
-    await expect(this.pageTitle).toHaveText('Products');
+    await this.verifyPageTitle('Swag Labs');
+    await this.verifyPageHeading(this.pageTitle, 'Products');
     await expect(this.productItems.first()).toBeVisible();
   }
 

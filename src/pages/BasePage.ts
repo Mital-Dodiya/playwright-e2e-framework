@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
 export class BasePage {
   readonly page: Page;
@@ -15,6 +15,18 @@ export class BasePage {
     return await this.page.title();
   }
 
+  async verifyPageTitle(expectedTitle: string): Promise<void> {
+    await expect(this.page).toHaveTitle(expectedTitle);
+  }
+
+  async verifyPageHeading(locator: Locator, expectedHeading: string): Promise<void> {
+    await expect(locator).toHaveText(expectedHeading);
+  }
+
+  async verifyCurrentURL(urlPattern: RegExp): Promise<void> {
+    await expect(this.page).toHaveURL(urlPattern);
+  }
+
   async waitForPageLoad(): Promise<void> {
     await this.page.waitForLoadState('networkidle');
   }
@@ -25,5 +37,13 @@ export class BasePage {
 
   async getElementText(locator: Locator): Promise<string> {
     return (await locator.textContent()) ?? '';
+  }
+
+  async scrollToElement(locator: Locator): Promise<void> {
+    await locator.scrollIntoViewIfNeeded();
+  }
+
+  async waitForElement(locator: Locator): Promise<void> {
+    await locator.waitFor({ state: 'visible' });
   }
 }

@@ -18,7 +18,8 @@ export class CartPage extends BasePage {
   }
 
   async verifyCartPageLoaded(): Promise<void> {
-    await expect(this.pageTitle).toHaveText('Your Cart');
+    await this.verifyPageTitle('Swag Labs');
+    await this.verifyPageHeading(this.pageTitle, 'Your Cart');
   }
 
   async getCartItemCount(): Promise<number> {

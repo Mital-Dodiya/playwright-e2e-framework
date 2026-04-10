@@ -26,7 +26,8 @@ export class CheckoutPage extends BasePage {
   }
 
   async verifyCheckoutPageLoaded(): Promise<void> {
-    await expect(this.pageTitle).toHaveText('Checkout: Your Information');
+    await this.verifyPageTitle('Swag Labs');
+    await this.verifyPageHeading(this.pageTitle, 'Checkout: Your Information');
   }
 
   async fillCheckoutInfo(firstName: string, lastName: string, postalCode: string): Promise<void> {

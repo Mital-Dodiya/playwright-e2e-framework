@@ -5,7 +5,7 @@ Then('the checkout overview page should be displayed', async ({ checkoutOverview
   await checkoutOverviewPage.verifyOverviewPageLoaded();
 });
 
-Then('the order summary should contain {int} item(s)', async ({ checkoutOverviewPage }, count: number) => {
+Then('the order summary should contain {int} items', async ({ checkoutOverviewPage }, count: number) => {
   const actual = await checkoutOverviewPage.getItemCount();
   expect(actual).toBe(count);
 });

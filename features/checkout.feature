@@ -15,7 +15,7 @@ Feature: Checkout
     When the user fills in checkout info with first name "Mital" last name "Dodiya" and postal code "400001"
     And the user clicks continue
     Then the checkout overview page should be displayed
-    And the order summary should contain 1 item(s)
+    And the order summary should contain 1 items
     And the order summary should display subtotal
     And the order summary should display tax
     And the order summary should display total amount

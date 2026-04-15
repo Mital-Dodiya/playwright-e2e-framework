@@ -1,0 +1,36 @@
+{
+  "validCheckout": {
+    "firstName": "Mital",
+    "lastName": "Dodiya",
+    "postalCode": "380001"
+  },
+  "invalidCheckout": [
+    {
+      "scenario": "missing first name",
+      "firstName": "",
+      "lastName": "Dodiya",
+      "postalCode": "380001",
+      "expectedError": "First Name is required"
+    },
+    {
+      "scenario": "missing last name",
+      "firstName": "Mital",
+      "lastName": "",
+      "postalCode": "380001",
+      "expectedError": "Last Name is required"
+    },
+    {
+      "scenario": "missing postal code",
+      "firstName": "Mital",
+      "lastName": "Dodiya",
+      "postalCode": "",
+      "expectedError": "Postal Code is required"
+    }
+  ],
+  "invalidPostalCodes": [
+    "ABC123",
+    "@@@@@@",
+    "00000",
+    "999999"
+  ]
+}

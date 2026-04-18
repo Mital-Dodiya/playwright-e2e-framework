@@ -1,6 +1,11 @@
 # Playwright E2E Automation Framework
 
 ![E2E Tests](https://github.com/Mital-Dodiya/playwright-e2e-framework/actions/workflows/e2e.yml/badge.svg)
+![Playwright](https://img.shields.io/badge/Playwright-v1.44-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-v5.4-blue)
+![BDD](https://img.shields.io/badge/BDD-Cucumber-brightgreen)
+![Tests](https://img.shields.io/badge/Tests-30%2B%20Scenarios-orange)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 End-to-end test automation framework built with **Playwright + TypeScript + BDD (Cucumber)** using Page Object Model on [saucedemo.com](https://www.saucedemo.com).
 

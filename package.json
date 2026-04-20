@@ -8,6 +8,8 @@
     "test:smoke": "npm run bdd:gen && playwright test --grep @smoke",
     "test:regression": "npm run bdd:gen && playwright test --grep @regression",
     "test:headed": "npm run bdd:gen && playwright test --headed",
+    "test:visual": "playwright test --project=visual",
+    "test:visual:update": "playwright test --project=visual --update-snapshots",
     "report": "playwright show-report",
     "lint": "tsc --noEmit"
   },

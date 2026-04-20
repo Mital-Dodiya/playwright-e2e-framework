@@ -32,5 +32,10 @@ export default defineConfig({
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
+    {
+      name: 'visual',
+      testDir: 'tests/visual',
+      use: { ...devices['Desktop Chrome'] },
+    },
   ],
 });

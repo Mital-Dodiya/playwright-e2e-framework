@@ -1,9 +1,10 @@
 import { expect } from '@playwright/test';
 import { Given, When, Then } from '../fixtures/customFixtures';
+import { ENV } from '../config/environment';
 
 Given('the user is logged in as {string}', async ({ loginPage, page }, username: string) => {
   await loginPage.goto();
-  await loginPage.login(username, 'secret_sauce');
+  await loginPage.login(username, ENV.users.standard.password);
   await expect(page).toHaveURL(/inventory/);
 });
 
